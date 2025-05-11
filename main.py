@@ -8,18 +8,19 @@ if __name__ == "__main__":
     content = repo_processor.get_combined_file_contents()
     response = wrapper.process_large_prompt(content)
 
-    print("Individual Results:\n")
-    index = 0
+    print("## Individual Results:\n")
+    index = 1
     for result in response["individual_results"]:
-        print(f"Result {index}: {result}")
+        print(f"### Result {index}:")
+        print(f"{result}")
         index += 1
-    print("\n\n")
 
-    print("Indvidual context summaries:\n")
-    index = 0
+    print("## Indvidual context summaries:")
+    index = 1
     for context in response["individual_context_summaries"]:
-        print(f"Context summary {index}: {context}")
+        print(f"### Context summary {index}:")
+        print(f"{context}")
         index += 1
-    print("\n\n")
 
-    print("Final Summary:\n", response["final_summary"])
+    print("## Final Summary:")
+    print(f"{response['final_summary']}")
